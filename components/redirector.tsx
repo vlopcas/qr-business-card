@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const destination = process.env.NEXT_PUBLIC_REDIRECT_URL ?? "https://links.vlopcas.dev";
 
@@ -20,8 +21,9 @@ export function Redirector() {
     <main className="redirect-shell">
       <div className="ambient-line ambient-line-top" aria-hidden="true" />
       <section className="redirect-card" aria-labelledby="redirect-title">
-        <span className="brand" aria-label="Victor Castro">
-          VC<span className="brand-dot">.</span>
+        <span className="brand" role="img" aria-label="Victor Castro">
+          <Image className="brand-dark" src="/logo.png" alt="" width={1254} height={1254} priority />
+          <Image className="brand-light" src="/logo-preta.png" alt="" width={1254} height={1254} priority />
         </span>
         <h1 id="redirect-title">Redirecionando...</h1>
         <div className="progress" role="progressbar" aria-label="Abrindo página de links">
