@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const destination = process.env.NEXT_PUBLIC_REDIRECT_URL ?? "https://links.vlopcas.dev";
+const defaultDestination = process.env.NEXT_PUBLIC_REDIRECT_URL ?? "https://links.vlopcas.dev";
 
-export function Redirector() {
+type RedirectorProps = { destination?: string };
+
+export function Redirector({ destination = defaultDestination }: RedirectorProps) {
   const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ export function Redirector() {
       window.clearTimeout(redirectTimer);
       window.clearTimeout(fallbackTimer);
     };
-  }, []);
+  }, [destination]);
 
   return (
     <main className="redirect-shell">
