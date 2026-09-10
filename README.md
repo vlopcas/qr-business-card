@@ -12,4 +12,4 @@ npm run dev
 O projeto usa exportação estática do Next.js e é publicado no GitHub Pages pelo workflow incluído.
 
 - `/` redireciona para a página principal de links.
-- `/card` é o endereço estável usado no QR do cartão presencial e também redireciona para a página principal de links.
+- `/card` é o endereço estável usado no QR do cartão presencial e redireciona para a experiência de contato em `links.vlopcas.dev/connect`.
